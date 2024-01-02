@@ -34,21 +34,56 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = A
 Connect the supply (+5V) to the circuit
 Switch ON the main switch
 If the output is 1, then the led glows.
-### 
-Program:
-/*
-Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+### Program
+### Half Adder
+```
+module halfadder(sum,a,b,carry);
+input a,b;
+output sum,carry;
+xor (sum,a,b);
+and (carry ,a,b);
+endmodule 
+```
+/* Program to design a half adder circuit and verify its truth table in quartus using Verilog programming.
+
+Developed by: BASKAR U 
+
+RegisterNumber: 212223220013
 */
-Logic symbol & Truthtable
-RTL realization
+### RTL realization
+![image](https://github.com/BaskarUmapathi/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/151434098/a15f6af3-852e-4566-820c-32adbdb40e47)
 
-### Output:
-### RTL
-### TIMING DIAGRAM
+### Truth Table 
+![image](https://github.com/BaskarUmapathi/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/151434098/9cdb7679-ee8d-45d5-87bd-c15c557572a5)
 
+### Waveform
+![image](https://github.com/BaskarUmapathi/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/151434098/61347188-bf11-4289-b786-8ee60577a7ed)
 
-### TRUTH TABLE 
+### Full Adder
+```
+module fulladder(a,b,c,sum,carry);
+input a,b,c;
+output sum, carry;
+xor(sum,a,b,c);
+assign carry=a&b | b&c | a&c;
+endmodule 
+```
+/* Program to design a full adder circuit and verify its truth table in quartus using Verilog programming.
+
+Developed by: BASKAR U
+
+RegisterNumber: 212223220013
+*/
+### RTL realization
+![image](https://github.com/BaskarUmapathi/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/151434098/b2933bc2-bff4-4f03-bef4-1d00aa5aba87)
+
+### Truth Table
+![image](https://github.com/BaskarUmapathi/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/151434098/8cde127c-a04a-4815-89fd-3e50cd10ad74)
+
+### Wavwform
+![image](https://github.com/BaskarUmapathi/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/151434098/62719ed2-9e27-45b7-8132-3f04c1cf7bb5)
+
 
 ### Result:
+Thus the given full adder and half adder are verified using verilog programming.
+
